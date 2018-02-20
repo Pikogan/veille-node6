@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+	<meta charset="UTF-8">
+	<title>Mon Application</title>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+
+
+
+
+	<form action="/ajouter" method="POST">
+		<input type="text" placeholder="prenom" name="prenom"> <br>
+		<input type="text" placeholder="nom" name="nom"> <br>
+		<input type="text" placeholder="telephone" name="telephone"> <br>
+		<input type="text" placeholder="courriel" name="courriel"> <br> 
+		<br>
+
+		<button type="submit">Submit</button>
+	</form>
+
+
+
+
+
+	<div class="sectionTableau">
+		
+		<table class="tableau">
+			<% let noLigne = 0 %>	
+			<% for (element of adresses) {%>
+			<% if (noLigne == 0) { %>
+
+			<tr>
+				<% noLigne++ %>
+				<% for (p in element){ %>
+				<th><%= p %></th>
+				<% } %>
+			</tr>
+
+			<% } %>
+
+
+			<tr>
+				<% for (p in element) { %>
+
+				<td><%= element[p] %></td>
+				
+				<% } %>
+
+			</tr>
+			<% } %>
+
+
+		</table>
+
+	</div>
+
+</body>
+</html>
